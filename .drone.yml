@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+steps:
+- name: publish
+  image: plugins/docker
+  settings:
+    registry: docker-registry.docker-registry.svc.cluster.local:5000
+    repo: docker-registry.docker-registry.svc.cluster.local:5000/wilson/docker-kubectl
+    auto_tag: true
+    insecure: true
+trigger:
+  branch:
+    - master
+  event:
+    - push
+
