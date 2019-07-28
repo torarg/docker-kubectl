@@ -8,4 +8,3 @@ RUN apk --no-cache add gettext ca-certificates openssl curl \
     && chmod a+x /usr/local/bin/kubectl_init.sh \
     && adduser kubectl-user -D 
 USER kubectl-user
-CMD ["kubectl_init.sh"]
